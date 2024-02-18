@@ -1,9 +1,12 @@
 package projava;
 
+import java.util.stream.IntStream;
+
 public class MethodSample {
     public static void main(String[] args) {
-        var result = twice(3);
-        System.out.println(result);
+        IntStream.range(0, 3)
+                .map(MethodSample::twice)
+            .forEach(System.out::println);
     }
 
     static int twice(int n) {
